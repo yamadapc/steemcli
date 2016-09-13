@@ -29,22 +29,22 @@ function getDefaults(options, filename, input) {
 
   function getDefaultParent(options) {
     if (!options.parent) {
-      info(chalk.blue('Info:') + ' Using steembin as the parent');
       options.parent = 'steembin';
+      info(chalk.blue('Info:') + ' Using ' + options.parent + ' as the parent');
     }
   }
 
   function getDefaultTitle(options) {
     if (!options.title) {
-      info(chalk.blue('Info:') + ' Using ' + filename + ' as the title');
-      options.title = filename;
+      options.title = path.basename(filename);
+      info(chalk.blue('Info:') + ' Using ' + options.title + ' as the title');
     }
   }
 
   function getDefaultLink(options) {
     if (!options.link) {
-      info(chalk.blue('Info:') + ' Using ' + options.link + ' as the permalink');
       options.link = slug(options.title).toLowerCase();
+      info(chalk.blue('Info:') + ' Using ' + options.link + ' as the permalink');
     }
   }
 
@@ -107,7 +107,7 @@ function getDefaults(options, filename, input) {
 function parseOptions(argv) {
   program.usage('[options] <file>').version(packageJson.version).option('-t,--title <title>', 'The title for your post').option('-d,--description <desc>', 'A short description for your post').option('-p,--parent <parent>', 'The parent post for this post, defaults to steembin').option('-w,--watch', 'Start a live-reloading preview for this post').option('-n,--noopen', 'When used with watch, prevent opening the preview').option('-l,--link <link>', 'The post\'s permalink').option('-r,--raw', 'If not specified, steembin will try to generate a markdown wrapper for your content').option('-v,--verbose', 'Be verbose').option('--username <username>', 'Your Steem username').option('--password <password>', 'Your Steem password').option('--wif <wif>', 'A Steem \'posting\' WIF token').option('--theme <theme>', 'Which theme to use for your post').option('--tags <tags>', 'Comma separated list of tags').parse(argv || process.argv);
 
-  const filename = program.args[0];
+  let filename = program.args[0];
   if (!filename) {
     console.error('');
     console.error(chalk.red('  Error:') + ' Missing required parameter <file>');

@@ -16,7 +16,7 @@ let run = (() => {
     };
 
     info(chalk.magenta('Payload: ----------------------------------------'));
-    info(JSON.stringify(_.extend(req, {
+    info(JSON.stringify(_.extend({}, req, {
       wif: '**********'
     }), null, 2));
     info(chalk.magenta('-------------------------------------------------'));
