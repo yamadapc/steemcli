@@ -16,4 +16,4 @@
 
 ; (setenv "STEEM_USERNAME" "")
 ; (setenv "STEEM_PASSWORD" "")
-(steem-buffer)
+; (steem-buffer)
