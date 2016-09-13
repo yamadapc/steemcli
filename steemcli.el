@@ -11,8 +11,9 @@
          (cfp (buffer-file-name cb)))
     (if (not cfp)
         (error "No file-name for this buffer")
-      (async-shell-command (concat "steemcli " cfp))
-      (display-buffer-pop-up-window "*Async Shell Command*" nil)
-      )))
+      (async-shell-command (concat "steemcli -v " cfp))
+      (display-buffer-pop-up-window "*Async Shell Command*" nil))))
 
+; (setenv "STEEM_USERNAME" "")
+; (setenv "STEEM_PASSWORD" "")
 (steem-buffer)
