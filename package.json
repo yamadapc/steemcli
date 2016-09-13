@@ -22,6 +22,7 @@
     "steem": "^0.3.21"
   },
   "devDependencies": {
+    "babel-cli": "^6.14.0",
     "babel-eslint": "^6.1.2",
     "eslint": "^3.5.0",
     "eslint-config-airbnb": "^11.1.0",
