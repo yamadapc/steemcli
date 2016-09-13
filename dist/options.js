@@ -106,7 +106,7 @@ function getDefaults(options, filename, input) {
  */
 
 function parseOptions(argv) {
-  program.usage('[options] <file>').version(packageJson.version).option('-t,--title <title>', 'The title for your post').option('-d,--description <desc>', 'A short description for your post').option('-p,--parent <parent>', 'The parent post for this post, defaults to steembin').option('-w,--watch', 'Start a live-reloading preview for this post').option('-n,--noopen', 'When used with watch, prevent opening the preview').option('-l,--link <link>', 'The post\'s permalink').option('-r,--raw', 'If not specified, steembin will try to generate a markdown wrapper for your content').option('-v,--verbose', 'Be verbose').option('--username <username>', 'Your Steem username').option('--password <password>', 'Your Steem password').option('--wif <wif>', 'A Steem \'posting\' WIF token').option('--theme <theme>', 'Which theme to use for your post').option('--tags <tags>', 'Comma separated list of tags').parse(argv || process.argv);
+  program.usage('[options] <file>').version(packageJson.version).option('-t,--title <title>', 'The title for your post').option('-d,--description <desc>', 'A short description for your post').option('-p,--parent <parent>', 'The parent post for this post, defaults to steembin').option('-w,--watch', 'Start a live-reloading preview for this post').option('-n,--noopen', 'When used with watch, prevent opening the preview').option('-l,--link <link>', 'The post\'s permalink').option('-r,--raw', 'If not specified, steembin will try to generate a markdown wrapper for your content').option('-v,--verbose', 'Be verbose').option('--parent-author <parentAuthor>', 'The author of parent post for this post').option('--username <username>', 'Your Steem username').option('--password <password>', 'Your Steem password').option('--wif <wif>', 'A Steem \'posting\' WIF token').option('--theme <theme>', 'Which theme to use for your post').option('--tags <tags>', 'Comma separated list of tags').parse(argv || process.argv);
 
   let filename = program.args[0];
   if (!filename) {
@@ -125,6 +125,7 @@ function parseOptions(argv) {
     username: program.username || process.env.STEEM_USERNAME,
     password: program.password || process.env.STEEM_PASSWORD,
     parent: program.parent,
+    parentAuthor: program.parentAuthor,
     raw: program.raw,
     theme: program.theme,
     link: program.link,

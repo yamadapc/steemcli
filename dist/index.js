@@ -2,7 +2,7 @@ let run = (() => {
   var _ref = _asyncToGenerator(function* (options, inputFile, filename) {
     const req = {
       wif: options.wif,
-      parentAuthor: '',
+      parentAuthor: options.parentAuthor || '',
       parentPermalink: options.parent,
       author: options.username,
       permalink: options.link,
