@@ -1,6 +1,6 @@
 {
   "name": "steemcli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A command-line client for posting content to Steem",
   "main": "dist/index.js",
   "bin": "bin/steemcli",
