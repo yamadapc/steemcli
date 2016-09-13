@@ -6,8 +6,13 @@
 ;; Homepage: https://github.com/yamadapc/steemcli
 
 (defun steem-buffer()
+  (interactive)
   (let* ((cb (current-buffer))
          (cfp (buffer-file-name cb)))
-    (message cfp)))
+    (if (not cfp)
+        (error "No file-name for this buffer")
+      (async-shell-command (concat "steemcli " cfp))
+      (display-buffer-pop-up-window "*Async Shell Command*" nil)
+      )))
 
 (steem-buffer)
