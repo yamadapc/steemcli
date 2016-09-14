@@ -1,6 +1,8 @@
 # steemcli
 A command-line client for posting content to Steem
 
+![](http://i.imgur.com/g8tt2cN.gif)
+
 ## Install
 ```
 npm install steemcli
