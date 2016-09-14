@@ -5,7 +5,7 @@ A command-line client for posting content to Steem
 
 ## Install
 ```
-npm install steemcli
+npm install -g steemcli
 ```
 
 ## Usage
