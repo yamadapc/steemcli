@@ -34,5 +34,9 @@ npm install -g steemcli
 
 ```
 
+## Editor Integration
+- Basic Emacs integration is available through the `steemcli.el` Emacs Lisp file
+
+
 ## License
 Published under the GPLv3 license by Pedro Tacla Yamada (@yamadapc)
