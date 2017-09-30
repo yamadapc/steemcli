@@ -116,7 +116,7 @@ function parseOptions(argv) {
     process.exit(1);
   }
 
-  if (!program.wif && !program.username && process.env.STEEM_USERNAME) info(chalk.blue('Info:') + ` Using STEEM_USERNAME=${ process.env.STEEM_USERNAME }`);
+  if (!program.wif && !program.username && process.env.STEEM_USERNAME) info(chalk.blue('Info:') + ` Using STEEM_USERNAME=${process.env.STEEM_USERNAME}`);
 
   if (!program.wif && !program.password && process.env.STEEM_PASSWORD) info(chalk.blue('Info:') + ' Using STEEM_PASSWORD=********');
 
